@@ -45,8 +45,8 @@ class StoreController < ApplicationController
       render :action => 'checkout'
     end
   end
-private
 
+private
   def find_cart
     unless session[:cart]
       session[:cart] = Cart.new
@@ -57,5 +57,9 @@ private
   def redirect_to_index(msg = nil)
     flash[:notice] = msg if msg
     redirect_to :action => 'index'
+  end
+
+protected
+  def authorize
   end
 end
