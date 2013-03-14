@@ -1,0 +1,964 @@
+# Logfile created on Sun Mar 10 20:04:02 +0900 2013  [4;36;1mSQL (0.024000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.121000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateUsers (7)
+  [4;35;1mSQL (0.006000)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `hashed_password` varchar(255) DEFAULT NULL, `salt` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.075000)[0m   [0mSHOW FIELDS FROM `line_items`[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mdescribe `line_items`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM `line_items`[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.004000)[0m   [0mdescribe `orders`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW KEYS FROM `orders`[0m
+  [4;35;1mSQL (0.018000)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.004000)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM `users`[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-03-12 07:55:39) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.113000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.004000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00400)
+Completed in 0.22500 (4 reqs/sec) | Rendering: 0.05500 (24%) | DB: 0.11700 (51%) | 200 OK [http://localhost/store]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2013-03-12 07:55:46) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (0.060000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+ERROR: compiling _run_erb_47app47views47users47new46html46erb RAISED compile error
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+_erbout.concat "    "; _erbout.concat(( f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" ).to_s); _erbout.concat "\n"
+                                                                                      ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:25: syntax error, unexpected $undefined, expecting ')'
+_erbout.concat "    "; _erbout.concat(( f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" ).to_s); _erbout.concat "\n"
+                                                                                                                  ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:28: unknown regexp options - fldt
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:28: syntax error, unexpected $undefined
+_erbout.concat "  </fieldset>\n"
+                              ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:29: syntax error, unexpected $undefined, expecting ')'
+ end ; _erbout.concat "\n"
+                        ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:30: syntax error, unexpected $undefined, expecting ')'
+_erbout.concat "\n"
+                 ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:31: unterminated string meets end of file
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:31: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body: def _run_erb_47app47views47users47new46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<div class=\"depot-form\">\n"
+_erbout.concat "\n"
+ form_for(@user) do |f| ; _erbout.concat "\n"
+_erbout.concat "  "; _erbout.concat(( f.error_messages ).to_s); _erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat "  <fieldset>\n"
+_erbout.concat "  <legend>\203\206\201[\203U\202\314\217\332\215\327\217\356\225\361\223\374\227\315</legend>\n"
+_erbout.concat "  \n"
+_erbout.concat "  <div>\n"
+_erbout.concat "    "; _erbout.concat(( f.label :name ).to_s); _erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( f.text_field :name, :size => 40 ).to_s); _erbout.concat "\n"
+_erbout.concat "  </div>\n"
+_erbout.concat "  \n"
+_erbout.concat "  <div>\n"
+_erbout.concat "    "; _erbout.concat(( f.label :user_password, 'ƒpƒXƒ[ƒh' ).to_s); _erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( f.password_field :password, :size => 40 ).to_s); _erbout.concat "\n"
+_erbout.concat "  </div>\n"
+_erbout.concat "  \n"
+_erbout.concat "  <div>\n"
+_erbout.concat "    "; _erbout.concat(( f.label :user_password_confirmation, 'Šm”F' ).to_s); _erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( f.password_field :password_confirmation, :size => 40 ).to_s); _erbout.concat "\n"
+_erbout.concat "  </div>\n"
+_erbout.concat "  \n"
+_erbout.concat "  <div>\n"
+_erbout.concat "    "; _erbout.concat(( f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" ).to_s); _erbout.concat "\n"
+_erbout.concat "  </div>\n"
+_erbout.concat "  \n"
+_erbout.concat "  </fieldset>\n"
+ end ; _erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat "</div>\n"
+_erbout
+end
+Backtrace: C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:31:in `compile_template'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:858:in `render_with_no_layout'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:872:in `render_with_no_layout'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `send'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `custom'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:156:in `call'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:156:in `respond'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/controllers/users_controller.rb:29:in `new'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+_erbout.concat "    "; _erbout.concat(( f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" ).to_s); _erbout.concat "\n"
+                                                                                      ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:25: syntax error, unexpected $undefined, expecting ')'
+_erbout.concat "    "; _erbout.concat(( f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" ).to_s); _erbout.concat "\n"
+                                                                                                                  ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:28: unknown regexp options - fldt
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:28: syntax error, unexpected $undefined
+_erbout.concat "  </fieldset>\n"
+                              ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:29: syntax error, unexpected $undefined, expecting ')'
+ end ; _erbout.concat "\n"
+                        ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:30: syntax error, unexpected $undefined, expecting ')'
+_erbout.concat "\n"
+                 ^
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:31: unterminated string meets end of file
+C:/Sites/InstantRails-2.0-win/rails_apps/depot/app/views/users/new.html.erb:31: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #25 of users/new.html.erb:
+22:   </div>
+23:   
+24:   <div>
+25:     <%= f.submit "ƒ†[ƒU‚ð’Ç‰Á‚·‚é", :class => "submit" %>
+26:   </div>
+27:   
+28:   </fieldset>
+
+    app/views/users/new.html.erb:31:in `compile_template'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `custom'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:156:in `call'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:156:in `respond'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/users_controller.rb:29:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2013-03-12 07:56:19) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.004000)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.10000 (9 reqs/sec) | Rendering: 0.01000 (9%) | DB: 0.00400 (3%) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 07:56:29) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.043000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = '') LIMIT 1[0m
+  [4;35;1mSQL (0.026000)[0m   [0mROLLBACK[0m
+
+
+NameError (undefined local variable or method `hased_password' for #<User:0xf6f3920>):
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/attribute_methods.rb:205:in `method_missing'
+    /app/models/user.rb:39:in `password_non_blank'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:1000:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:1000:in `run_validations'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:998:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:998:in `run_validations'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:962:in `valid_without_callbacks?'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:273:in `valid?'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:933:in `save_without_transactions'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:80:in `transaction'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:100:in `transaction'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:120:in `rollback_active_record_state!'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    /app/controllers/users_controller.rb:46:in `create'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:106:in `call'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/users_controller.rb:45:in `create'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 07:57:44) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = '') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.02900 (34 reqs/sec) | Rendering: 0.00400 (13%) | DB: 0.07800 (268%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 07:57:58) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = '') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.02900 (34 reqs/sec) | Rendering: 0.00500 (17%) | DB: 0.00300 (10%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 07:58:28) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"chihiro", "password_confirmation"=>"ji", "password"=>"yanagisawa"}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = 'chihiro') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.00500 (16%) | DB: 0.00400 (12%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 07:58:34) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"chihiro", "password_confirmation"=>"yanagisawa", "password"=>"yanagisawa"}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = 'chihiro') LIMIT 1[0m
+  [4;35;1mUser Create (0.053000)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `created_at`) VALUES('chihiro', '1292229800.683063309247931', '2013-03-12 07:58:34', '1637bdf8b1521d9a182041e3f18e0fae52eba502', '2013-03-12 07:58:34')[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.08100 (12 reqs/sec) | DB: 0.05800 (71%) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-12 07:58:35) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.00800 (25%) | DB: 0.00200 (6%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2013-03-12 07:59:36) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.028000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 0.05700 (17 reqs/sec) | Rendering: 0.00800 (14%) | DB: 0.03100 (54%) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-12 07:59:45) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 0.10500 (9 reqs/sec) | Rendering: 0.00600 (5%) | DB: 0.00500 (4%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2013-03-12 07:59:50) [DELETE]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "_method"=>"delete", "action"=>"destroy", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Destroy (0.001000)[0m   [0;1m DELETE FROM `users`
+ WHERE `id` = 1
+[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.02700 (37 reqs/sec) | DB: 0.00500 (18%) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-12 07:59:50) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00600 (18%) | DB: 0.00100 (3%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2013-03-12 07:59:52) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00500 (19%) | DB: 0.00200 (7%) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-12 08:00:21) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"chihiro", "password_confirmation"=>"yanagisawa", "password"=>"yanagisawa"}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = 'chihiro') LIMIT 1[0m
+  [4;35;1mUser Create (0.001000)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `created_at`) VALUES('chihiro', '1288797000.820901976594007', '2013-03-12 08:00:21', '7f7a99f1319116c8c0d8225672e17cc6416cb0ff', '2013-03-12 08:00:21')[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.02800 (35 reqs/sec) | DB: 0.00400 (14%) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-12 08:00:21) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 0.02900 (34 reqs/sec) | Rendering: 0.00500 (17%) | DB: 0.00500 (17%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2013-03-12 08:00:40) [DELETE]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "_method"=>"delete", "action"=>"destroy", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Destroy (0.000000)[0m   [0;1m DELETE FROM `users`
+ WHERE `id` = 2
+[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.02600 (38 reqs/sec) | DB: 0.00500 (19%) | 302 Found [http://localhost/users/2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-12 08:00:40) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.02100 (47 reqs/sec) | Rendering: 0.00300 (14%) | DB: 0.00100 (4%) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (1.730000)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.321000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-03-14 16:03:56) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.697000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.622000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.29000)
+Completed in 9.64000 (0 reqs/sec) | Rendering: 4.47000 (46%) | DB: 3.37000 (34%) | 200 OK [http://localhost/store]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2013-03-14 16:33:48) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mProduct Load (0.020000)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 0.88100 (1 reqs/sec) | Rendering: 0.55000 (62%) | DB: 0.02300 (2%) | 200 OK [http://localhost/products]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2013-03-14 16:34:13) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.090000)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.54900 (1 reqs/sec) | Rendering: 0.00700 (1%) | DB: 0.09000 (16%) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-14 16:34:22) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.036000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00600 (9%) | DB: 0.03600 (57%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2013-03-14 16:35:00) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.00700 (22%) | DB: 0.00300 (9%) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2013-03-14 16:35:17) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"user"=>{"name"=>"chihiro", "password_confirmation"=>"yanagisawa", "password"=>"yanagisawa"}, "commit"=>"ãƒ¦ãƒ¼ã‚¶ã‚’è¿½åŠ ã™ã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.018000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = 'chihiro') LIMIT 1[0m
+  [4;35;1mUser Create (0.085000)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `created_at`) VALUES('chihiro', '1288691900.215205259271359', '2013-03-14 16:35:17', '77d6950056721ef443f0ecc6d20cbcf4ad1d064d', '2013-03-14 16:35:17')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.22700 (4 reqs/sec) | DB: 0.10700 (47%) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-03-14 16:35:17) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.016000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 0.11600 (8 reqs/sec) | Rendering: 0.00600 (5%) | DB: 0.01800 (15%) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-03-14 16:35:32) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-03-14 16:35:50) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-03-14 16:36:13) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/admin/login" with {:method=>:get}):
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-03-14 16:37:02) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00900 (111 reqs/sec) | Rendering: 0.00600 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-03-14 16:37:12) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"name"=>"chihiro", "commit"=>"ãƒ­ã‚°ã‚¤ãƒ³", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"login", "controller"=>"admin", "password"=>"yanagisaw"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Rendering admin/login
+Completed in 0.26000 (3 reqs/sec) | Rendering: 0.00200 (0%) | DB: 0.00400 (1%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-03-14 16:37:14) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"name"=>"chihiro", "commit"=>"ãƒ­ã‚°ã‚¤ãƒ³", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"login", "controller"=>"admin", "password"=>"yanagisaw"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Rendering admin/login
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00200 (7%) | DB: 0.00300 (11%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-03-14 16:37:17) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"name"=>"chihiro", "commit"=>"ãƒ­ã‚°ã‚¤ãƒ³", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 0.02500 (39 reqs/sec) | DB: 0.00500 (19%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-03-14 16:37:17) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mOrder Columns (0.070000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.082000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering admin/index
+Completed in 0.19300 (5 reqs/sec) | Rendering: 0.00400 (2%) | DB: 0.15200 (78%) | 200 OK [http://localhost/admin]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2013-03-14 16:37:40) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.003000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00300 (9%) | 200 OK [http://localhost/products]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2013-03-14 16:37:44) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;36;1mOrder Load (0.001000)[0m   [0;1mSELECT * FROM `orders` [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;35;1mOrder Columns (0.003000)[0m   [0mSHOW FIELDS FROM `orders`[0m
+Completed in 0.12000 (8 reqs/sec) | Rendering: 0.10500 (87%) | DB: 0.00400 (3%) | 200 OK [http://localhost/orders]
+
+
+Processing OrdersController#destroy (for 127.0.0.1 at 2013-03-14 16:37:50) [DELETE]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "_method"=>"delete", "action"=>"destroy", "id"=>"1", "controller"=>"orders"}
+  [4;36;1mOrder Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mOrder Load (0.032000)[0m   [0mSELECT * FROM `orders` WHERE (`orders`.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Destroy (0.000000)[0m   [0m DELETE FROM `orders`
+ WHERE `id` = 1
+[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/orders
+Completed in 0.04900 (20 reqs/sec) | DB: 0.03600 (73%) | 302 Found [http://localhost/orders/1]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2013-03-14 16:37:50) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;35;1mOrder Load (0.000000)[0m   [0mSELECT * FROM `orders` [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;36;1mOrder Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+Completed in 0.02000 (50 reqs/sec) | Rendering: 0.00700 (34%) | DB: 0.00300 (15%) | 200 OK [http://localhost/orders]
+
+
+Processing OrdersController#destroy (for 127.0.0.1 at 2013-03-14 16:37:52) [DELETE]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "_method"=>"delete", "action"=>"destroy", "id"=>"2", "controller"=>"orders"}
+  [4;35;1mOrder Columns (0.003000)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Load (0.000000)[0m   [0;1mSELECT * FROM `orders` WHERE (`orders`.`id` = 2) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Destroy (0.077000)[0m   [0;1m DELETE FROM `orders`
+ WHERE `id` = 2
+[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/orders
+Completed in 0.09300 (10 reqs/sec) | DB: 0.08100 (87%) | 302 Found [http://localhost/orders/2]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2013-03-14 16:37:52) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;36;1mOrder Load (0.000000)[0m   [0;1mSELECT * FROM `orders` [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;35;1mOrder Columns (0.003000)[0m   [0mSHOW FIELDS FROM `orders`[0m
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.00500 (26%) | DB: 0.00300 (15%) | 200 OK [http://localhost/orders]
+
+
+Processing OrdersController#destroy (for 127.0.0.1 at 2013-03-14 16:37:54) [DELETE]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "_method"=>"delete", "action"=>"destroy", "id"=>"3", "controller"=>"orders"}
+  [4;36;1mOrder Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mOrder Load (0.000000)[0m   [0mSELECT * FROM `orders` WHERE (`orders`.`id` = 3) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Destroy (0.000000)[0m   [0m DELETE FROM `orders`
+ WHERE `id` = 3
+[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/orders
+Completed in 0.02000 (50 reqs/sec) | DB: 0.00500 (25%) | 302 Found [http://localhost/orders/3]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2013-03-14 16:37:55) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;35;1mOrder Load (0.001000)[0m   [0mSELECT * FROM `orders` [0m
+Rendering template within layouts/orders
+Rendering orders/index
+Completed in 0.01300 (76 reqs/sec) | Rendering: 0.00300 (23%) | DB: 0.00100 (7%) | 200 OK [http://localhost/orders]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-03-14 16:37:58) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mOrder Columns (0.007000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering admin/index
+Completed in 0.02100 (47 reqs/sec) | Rendering: 0.00200 (9%) | DB: 0.00800 (38%) | 200 OK [http://localhost/admin]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2013-03-14 16:38:02) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"commit"=>"ã‚«ãƒ¼ãƒˆã«å…¥ã‚Œã‚‹", "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProduct Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.001000)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (0.01700)
+Rendered store/_cart (0.05100)
+Completed in 0.11700 (8 reqs/sec) | Rendering: 0.08000 (68%) | DB: 0.00400 (3%) | 200 OK [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2013-03-14 16:38:04) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"checkout", "controller"=>"store"}
+  [4;36;1mOrder Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+Rendering template within layouts/store
+Rendering store/checkout
+  [4;35;1mProduct Columns (0.003000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.00500)
+Rendered store/_cart (0.00700)
+Completed in 0.08800 (11 reqs/sec) | Rendering: 0.07200 (81%) | DB: 0.00600 (6%) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2013-03-14 16:38:10) [POST]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"commit"=>"æ³¨æ–‡ã™ã‚‹", "order"=>{"name"=>"fd", "pay_type"=>"check", "address"=>"fd", "email"=>"cd"}, "authenticity_token"=>"dacc4358def49bb02d973763895a4f7a6d9a0934", "action"=>"save_order", "controller"=>"store"}
+  [4;36;1mOrder Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.051000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mLineItem Columns (0.037000)[0m   [0;1mSHOW FIELDS FROM `line_items`[0m
+  [4;35;1mProduct Columns (0.004000)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.001000)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `pay_type`, `address`, `created_at`, `email`) VALUES('fd', '2013-03-14 16:38:11', 'check', 'fd', '2013-03-14 16:38:11', 'cd')[0m
+  [4;36;1mLineItem Create (0.013000)[0m   [0;1mINSERT INTO `line_items` (`order_id`, `updated_at`, `total_price`, `product_id`, `quantity`, `created_at`) VALUES(1, '2013-03-14 16:38:11', '29.95', 1, 1, '2013-03-14 16:38:11')[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/store
+Completed in 0.15600 (6 reqs/sec) | DB: 0.11000 (70%) | 302 Found [http://localhost/store/save_order]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-03-14 16:38:11) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.003000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.06100 (16 reqs/sec) | Rendering: 0.03700 (60%) | DB: 0.00400 (6%) | 200 OK [http://localhost/store]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2013-03-14 16:38:14) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;36;1mOrder Load (0.001000)[0m   [0;1mSELECT * FROM `orders` [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;35;1mOrder Columns (0.002000)[0m   [0mSHOW FIELDS FROM `orders`[0m
+Completed in 0.02000 (50 reqs/sec) | Rendering: 0.00700 (34%) | DB: 0.00300 (15%) | 200 OK [http://localhost/orders]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-03-14 16:38:16) [GET]
+  Session ID: f1d3fa13e185087f915cbad7d7bd1276
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mOrder Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering admin/index
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00200 (13%) | DB: 0.00300 (20%) | 200 OK [http://localhost/admin]
