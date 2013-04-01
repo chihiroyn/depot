@@ -14,14 +14,25 @@
 
   <div id="columns">
     <div id="side">
-      <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
-        <%= render(:partial => "cart", :object => @cart) %>
+      <% if @cart %>
+        <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+          <%= render(:partial => "cart", :object => @cart) %>
+        <% end %>
       <% end %>
       
       <a href="/store">ホーム</a><br />
       <a href="http://www..../faq">よくある質問</a><br />
       <a href="http://www..../news">ニュース</a><br />
       <a href="http://www..../contact">お問い合わせ</a><br />
+
+      <% if session[:user_id] %>
+        <br />
+        <%= link_to '注文',   :controller => 'orders' %><br />
+        <%= link_to '商品', :controller => 'products' %><br />
+        <%= link_to 'ユーザ',    :controller => 'users'    %><br />
+        <br />
+        <%= link_to 'ログアウト', :controller => 'admin', :action => 'logout' %>
+      <% end %>
     </div>
     
     <div id="main">

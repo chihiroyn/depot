@@ -1029,3 +1029,475 @@ Processing AdminController#index (for 127.0.0.1 at 2013-03-15 07:46:47) [GET]
   [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
 Rendering admin/index
 Completed in 0.08300 (12 reqs/sec) | Rendering: 0.00300 (3%) | DB: 0.03900 (46%) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:17:58) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.046000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x5826f7c @filter=:authorize>] rendered_or_redirected.
+Completed in 0.26400 (3 reqs/sec) | DB: 0.04600 (17%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:17:58) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.items) on line #17 of layouts/store.html.erb:
+14: 
+15:   <div id="columns">
+16:     <div id="side">
+17:       <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+18:         <%= render(:partial => "cart", :object => @cart) %>
+19:       <% end %>
+20:       
+
+    app/views/layouts/store.html.erb:17:in `_run_erb_47app47views47layouts47store46html46erb'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:268:in `render_without_benchmark'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:22:33) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.01000 (100 reqs/sec) | Rendering: 0.00700 (69%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:22:37) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x4ba41a0 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.01900 (52 reqs/sec) | DB: 0.00300 (15%) | 302 Found [http://localhost/admin/]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:22:37) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00400 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:22:54) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x58316e8 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.02000 (50 reqs/sec) | DB: 0.00300 (15%) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:22:54) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00500 (71%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:23:02) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x569a604 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.01800 (55 reqs/sec) | DB: 0.00300 (16%) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:23:02) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00300 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:23:35) [POST]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56e3ad1e60eedf944ab00b33a39356cb47e4944", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login?%2Fusers=index
+Completed in 0.02100 (47 reqs/sec) | DB: 0.00300 (14%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:23:35) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"/users"=>"index", "action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00800 (125 reqs/sec) | Rendering: 0.00500 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login?%2Fusers=index]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:23:41) [POST]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56e3ad1e60eedf944ab00b33a39356cb47e4944", "action"=>"login", "controller"=>"admin", "password"=>"chihiro"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00500 (19%) | DB: 0.00200 (7%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:23:47) [POST]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56e3ad1e60eedf944ab00b33a39356cb47e4944", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 0.02200 (45 reqs/sec) | DB: 0.00300 (13%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:23:47) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.057000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 0.13700 (7 reqs/sec) | Rendering: 0.05000 (36%) | DB: 0.06200 (45%) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 07:25:01) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 0.09100 (10 reqs/sec) | Rendering: 0.00500 (5%) | DB: 0.00200 (2%) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 07:26:14) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.00300 (10%) | DB: 0.00400 (14%) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 07:26:15) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00300 (11%) | DB: 0.00300 (11%) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:26:21) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 0.03400 (29 reqs/sec) | Rendering: 0.00400 (11%) | DB: 0.00500 (14%) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 07:26:26) [GET]
+  Session ID: 60421f37ca3ad5334412efacf5362bf9
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 0.02500 (39 reqs/sec) | Rendering: 0.00300 (12%) | DB: 0.00300 (11%) | 200 OK [http://localhost/admin/logout]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-04-02 07:26:46) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.187000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.003000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00300)
+Completed in 0.28500 (3 reqs/sec) | Rendering: 0.07900 (27%) | DB: 0.19000 (66%) | 200 OK [http://localhost/store]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:26:50) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x98a1958 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.02100 (47 reqs/sec) | DB: 0.00400 (19%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:26:50) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00600 (39%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:26:58) [POST]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"90236612621cd3755e92a5717f856a1e6175b75e", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login?%2Fadmin=index
+Completed in 0.02500 (40 reqs/sec) | DB: 0.00300 (11%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:26:58) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"/admin"=>"index", "action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00800 (125 reqs/sec) | Rendering: 0.00500 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login?%2Fadmin=index]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:27:03) [POST]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"90236612621cd3755e92a5717f856a1e6175b75e", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 0.02500 (39 reqs/sec) | DB: 0.00400 (15%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:27:03) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 0.03600 (27 reqs/sec) | Rendering: 0.00400 (11%) | DB: 0.00600 (16%) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 07:28:35) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 0.03600 (27 reqs/sec) | Rendering: 0.00300 (8%) | DB: 0.00500 (13%) | 200 OK [http://localhost/admin]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:28:41) [GET]
+  Session ID: 1b2513b99968920ffe53cca42609beef
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00700 (21%) | DB: 0.00400 (12%) | 200 OK [http://localhost/users]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-04-02 07:28:53) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00200)
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.01100 (39%) | DB: 0.00300 (10%) | 200 OK [http://localhost/store]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:28:56) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x96ec180 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.01900 (52 reqs/sec) | DB: 0.00200 (10%) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:28:56) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00400 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:29:05) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login?%2Fusers=index
+Completed in 0.02700 (37 reqs/sec) | DB: 0.00500 (18%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:29:05) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"/users"=>"index", "action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00400 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login?%2Fusers=index]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:29:08) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.03000 (33 reqs/sec) | Rendering: 0.00500 (16%) | DB: 0.00300 (10%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2013-04-02 07:32:40) [DELETE]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "_method"=>"delete", "action"=>"destroy", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Destroy (0.000000)[0m   [0;1m DELETE FROM `users`
+ WHERE `id` = 3
+[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 0.02700 (37 reqs/sec) | DB: 0.00600 (22%) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:32:40) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x9884ed4 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.02000 (50 reqs/sec) | DB: 0.00300 (15%) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:32:40) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00400 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (users.name = 'chihiro') LIMIT 1[0m
+  [4;35;1mUser Create (0.001000)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `created_at`) VALUES('chihiro', '395939500.750503564174012', '2013-04-02 07:34:46', '982cdc0d031e0adad3e68cba3b3d92702ffa2d1d', '2013-04-02 07:34:46')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:35:15) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login?%2Fusers=index
+Completed in 0.02300 (43 reqs/sec) | DB: 0.00300 (13%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 07:35:15) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"/users"=>"index", "action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00400 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login?%2Fusers=index]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:35:17) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00500 (19%) | DB: 0.00200 (7%) | 200 OK [http://localhost/users]
