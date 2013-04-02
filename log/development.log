@@ -1501,3 +1501,246 @@ Processing UsersController#index (for 127.0.0.1 at 2013-04-02 07:35:17) [GET]
 Rendering template within layouts/store
 Rendering users/index
 Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00500 (19%) | DB: 0.00200 (7%) | 200 OK [http://localhost/users]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-04-02 22:12:28) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.082000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.004000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00700)
+Completed in 0.21300 (4 reqs/sec) | Rendering: 0.10900 (51%) | DB: 0.08600 (40%) | 200 OK [http://localhost/store]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 22:12:31) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.019000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.026000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.19000 (5 reqs/sec) | Rendering: 0.01700 (8%) | DB: 0.04600 (24%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2013-04-02 22:12:34) [DELETE]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "_method"=>"delete", "action"=>"destroy", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 1
+[0m
+  [4;36;1mSQL (0.022000)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.005000)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/users
+Completed in 0.05800 (17 reqs/sec) | DB: 0.02900 (49%) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 22:12:35) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00500 (15%) | DB: 0.00400 (12%) | 200 OK [http://localhost/users]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 22:12:48) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 0.02500 (40 reqs/sec) | Rendering: 0.00500 (19%) | DB: 0.00300 (11%) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 22:14:02) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Completed in 0.02100 (47 reqs/sec) | DB: 0.00300 (14%) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:02) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00900 (111 reqs/sec) | Rendering: 0.00600 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-04-02 22:14:05) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.001000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.02300 (43 reqs/sec) | Rendering: 0.01100 (47%) | DB: 0.00300 (13%) | 200 OK [http://localhost/store]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-04-02 22:14:14) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering C:/Sites/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2013-04-02 22:14:19) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.021000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x97eb298 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.03900 (25 reqs/sec) | DB: 0.02400 (61%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:19) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00900 (111 reqs/sec) | Rendering: 0.00500 (55%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:28) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"login", "controller"=>"admin", "password"=>"yanagiswa"}
+  [4;35;1mUser Columns (0.025000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.05000 (20 reqs/sec) | Rendering: 0.00500 (10%) | DB: 0.02500 (50%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:34) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"name"=>"chihiro", "commit"=>"ログイン", "authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"login", "controller"=>"admin", "password"=>"yanagisawa"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'chihiro') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login?%2Fadmin=index
+Completed in 0.08900 (11 reqs/sec) | DB: 0.00400 (4%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:35) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"/admin"=>"index", "action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00400 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login?%2Fadmin=index]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2013-04-02 22:14:38) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 0.02700 (37 reqs/sec) | Rendering: 0.00500 (18%) | DB: 0.00400 (14%) | 200 OK [http://localhost/users]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2013-04-02 22:14:39) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"logout", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Completed in 0.02300 (43 reqs/sec) | DB: 0.00300 (13%) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2013-04-02 22:14:40) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00400 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2013-04-02 22:14:56) [GET]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.002000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.02200 (45 reqs/sec) | Rendering: 0.00900 (40%) | DB: 0.00200 (9%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2013-04-02 22:14:58) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"commit"=>"カートに入れる", "authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProduct Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (0.00300)
+Rendered store/_cart (0.00500)
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01400 (45%) | DB: 0.00200 (6%) | 200 OK [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2013-04-02 22:15:02) [POST]
+  Session ID: 858a78174d7eaef62476abcba013194b
+  Parameters: {"authenticity_token"=>"f56fb02816b0b8edc8b6c8297f8d5ee26766ab2e", "action"=>"checkout", "controller"=>"store"}
+  [4;36;1mOrder Columns (0.087000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+Rendering template within layouts/store
+Rendering store/checkout
+  [4;35;1mProduct Columns (0.003000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.00700)
+Rendered store/_cart (0.00900)
+Completed in 0.17200 (5 reqs/sec) | Rendering: 0.04700 (27%) | DB: 0.09000 (52%) | 200 OK [http://localhost/store/checkout]
